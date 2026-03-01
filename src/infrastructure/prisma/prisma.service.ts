@@ -6,6 +6,7 @@ import {
 } from '@nestjs/common'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from '@prisma/generated/client'
+import {ConfigService} from "@nestjs/config";
 
 @Injectable()
 export class PrismaService
@@ -14,8 +15,14 @@ export class PrismaService
 {
 	private readonly logger = new Logger(PrismaService.name)
 
-	public constructor() {
-		const adapter = new PrismaPg(process.env.POSTGRES_URI)
+	public constructor(private readonly configService: ConfigService) {
+		const adapter = new PrismaPg({
+			user: configService.getOrThrow<string>('POSTGRES_USER'),
+			password: configService.getOrThrow<string>('POSTGRES_PASSWORD'),
+			host: configService.getOrThrow<string>('POSTGRES_HOST'),
+			port: configService.getOrThrow<number>('POSTGRES_PORT'),
+			database: configService.getOrThrow<number>('POSTGRES_DATABASE')
+		})
 
 		super({ adapter })
 	}
