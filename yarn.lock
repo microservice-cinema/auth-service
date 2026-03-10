@@ -952,6 +952,11 @@
   resolved "https://registry.yarnpkg.com/@lukeed/csprng/-/csprng-1.1.0.tgz#1e3e4bd05c1cc7a0b2ddbd8a03f39f6e4b5e6cfe"
   integrity sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==
 
+"@microservice-cinema/common@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@microservice-cinema/common/-/common-1.0.0.tgz#a1f5257c370fbadd5a73abdd012cbc5436e64214"
+  integrity sha512-I3OgJJxkfCa62CgKhJmVDx54Q2Z8p0vVQwlvTs6QxbYLx169U3sVrZJrcGA6TNh3WoU/HZV4kghEWTKKiJ7K4w==
+
 "@microservice-cinema/contracts@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@microservice-cinema/contracts/-/contracts-1.0.1.tgz#35b23b3bd11fbcb4185b629c65a751bd8425a43c"
