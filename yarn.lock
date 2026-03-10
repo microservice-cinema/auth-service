@@ -952,10 +952,10 @@
   resolved "https://registry.yarnpkg.com/@lukeed/csprng/-/csprng-1.1.0.tgz#1e3e4bd05c1cc7a0b2ddbd8a03f39f6e4b5e6cfe"
   integrity sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==
 
-"@microservice-cinema/contracts@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@microservice-cinema/contracts/-/contracts-1.0.0.tgz#2e5f2c26e1b7a50462a6c1746cc607008ef1b042"
-  integrity sha512-efLAaRKsw1K73eGlJpYasCWEIQDjQGA4x2S1lmrLEJ6L3e1pqZfTYdOn4sRQPPvb/aqQRFy04rNGFK01nGjrEw==
+"@microservice-cinema/contracts@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@microservice-cinema/contracts/-/contracts-1.0.1.tgz#35b23b3bd11fbcb4185b629c65a751bd8425a43c"
+  integrity sha512-tYK8Mu11/Ogmo8m8LRmgjPgGFNDY5Afbx446ARi6/8xdIMQ6iHI+Rcj2kqPOkeKZpc0Ub40XOGKoqfCLGuBMFg==
   dependencies:
     "@nestjs/microservices" "^11.1.13"
     rxjs "^7.8.2"
