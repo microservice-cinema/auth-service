@@ -1,3 +1,4 @@
+import { RpcStatus } from '@microservice-cinema/common'
 import type {
 	SendOtpRequest,
 	VerifyOtpRequest
@@ -8,7 +9,6 @@ import { Account } from '@prisma/generated/client'
 
 import { AuthRepository } from '@/modules/auth/auth.repository'
 import { OtpService } from '@/modules/otp/otp.service'
-import {RpcStatus} from "@microservice-cinema/common";
 
 @Injectable()
 export class AuthService {
