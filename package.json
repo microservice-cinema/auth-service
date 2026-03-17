@@ -25,6 +25,7 @@
     "@microservice-cinema/common": "^1.0.0",
     "@microservice-cinema/contracts": "^1.0.3",
     "@microservice-cinema/core": "^1.0.4",
+    "@microservice-cinema/passport": "^1.0.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.1",
