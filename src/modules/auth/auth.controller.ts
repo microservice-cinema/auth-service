@@ -2,7 +2,9 @@ import type {
 	SendOtpRequest,
 	SendOtpResponse,
 	VerifyOtpRequest,
-	VerifyOtpResponse
+	VerifyOtpResponse,
+	RefreshRequest,
+	RefreshResponse
 } from '@microservice-cinema/contracts/gen/auth'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
@@ -21,5 +23,10 @@ export class AuthController {
 	@GrpcMethod('AuthService', 'VerifyOtp')
 	public async VerifyOtp(data: VerifyOtpRequest): Promise<VerifyOtpResponse> {
 		return await this.authService.verifyOtp(data)
+	}
+
+	@GrpcMethod('AuthService', 'Refresh')
+	public async refresh(data: RefreshRequest): Promise<RefreshResponse> {
+		return await this.authService.refresh(data)
 	}
 }
