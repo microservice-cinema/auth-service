@@ -1,10 +1,10 @@
 import type {
+	RefreshRequest,
+	RefreshResponse,
 	SendOtpRequest,
 	SendOtpResponse,
 	VerifyOtpRequest,
-	VerifyOtpResponse,
-	RefreshRequest,
-	RefreshResponse
+	VerifyOtpResponse
 } from '@microservice-cinema/contracts/gen/auth'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
