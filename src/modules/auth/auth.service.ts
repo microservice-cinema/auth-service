@@ -98,7 +98,7 @@ export class AuthService {
 
 		const result = this.passportService.verify(refreshToken)
 
-		if(!result.valid) {
+		if (!result.valid) {
 			throw new RpcException({
 				code: RpcStatus.UNAUTHENTICATED,
 				details: result.reason
