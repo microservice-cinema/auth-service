@@ -1,12 +1,21 @@
 import { Injectable } from '@nestjs/common'
 import type { Account } from '@prisma/generated/client'
-import type { AccountUpdateInput } from '@prisma/generated/models/Account'
+import {
+	AccountCreateInput,
+	AccountUpdateInput
+} from '@prisma/generated/models/Account'
 
 import { PrismaService } from '@/infrastructure/prisma/prisma.service'
 
 @Injectable()
 export class UserRepository {
 	public constructor(private readonly prismaService: PrismaService) {}
+
+	public async create(data: AccountCreateInput): Promise<Account> {
+		return this.prismaService.account.create({
+			data
+		})
+	}
 
 	public async findByPhone(phone: string): Promise<Account | null> {
 		return this.prismaService.account.findUnique({
