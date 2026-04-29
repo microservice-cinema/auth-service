@@ -3,6 +3,7 @@ import type {
 	GrpcConfig,
 	PassportConfig,
 	RedisConfig,
+	RmqConfig,
 	TelegramConfig
 } from '@/config'
 
@@ -11,5 +12,6 @@ export interface AllConfigs {
 	grpc: GrpcConfig
 	passport: PassportConfig
 	redis: RedisConfig
+	rmq: RmqConfig
 	telegram: TelegramConfig
 }
