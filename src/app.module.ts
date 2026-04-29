@@ -6,8 +6,10 @@ import {
 	grpcEnv,
 	passportEnv,
 	redisEnv,
+	rmqEnv,
 	telegramEnv
 } from './config'
+import { MessagingModule } from './infrastructure/messaging/messaging.module'
 import { PrismaModule } from './infrastructure/prisma/prisma.module'
 import { RedisModule } from './infrastructure/redis/redis.module'
 import { AccountModule } from './modules/account/account.module'
@@ -20,11 +22,19 @@ import { TokenModule } from './modules/token/token.module'
 	imports: [
 		ConfigModule.forRoot({
 			isGlobal: true,
-			load: [databaseEnv, grpcEnv, passportEnv, redisEnv, telegramEnv]
+			load: [
+				databaseEnv,
+				grpcEnv,
+				passportEnv,
+				redisEnv,
+				telegramEnv,
+				rmqEnv
+			]
 		}),
 		OtpModule,
 		TokenModule,
 		PrismaModule,
+		MessagingModule,
 		RedisModule,
 		AuthModule,
 		AccountModule,
