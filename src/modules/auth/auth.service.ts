@@ -9,6 +9,7 @@ import { RpcException } from '@nestjs/microservices'
 import { Account } from '@prisma/generated/client'
 
 import { MessagingService } from '@/infrastructure/messaging/messaging.service'
+import { UsersClientGrpc } from '@/infrastructure/users/users.grpc'
 import { OtpService } from '@/modules/otp/otp.service'
 import { TokenService } from '@/modules/token/token.service'
 import { UserRepository } from '@/shared/repositories'
@@ -19,7 +20,8 @@ export class AuthService {
 		private readonly userRepository: UserRepository,
 		private readonly otpService: OtpService,
 		private readonly tokenService: TokenService,
-		private readonly messagingService: MessagingService
+		private readonly messagingService: MessagingService,
+		private readonly usersClient: UsersClientGrpc
 	) {}
 
 	public async sendOtp(data: SendOtpRequest) {
@@ -42,6 +44,8 @@ export class AuthService {
 			identifier,
 			type as 'phone' | 'email'
 		)
+
+		console.log('CODE:', code)
 
 		await this.messagingService.otpRequested({
 			identifier,
@@ -82,6 +86,8 @@ export class AuthService {
 			await this.userRepository.update(account.id, {
 				isEmailVerified: true
 			})
+
+		this.usersClient.create({ id: account.id }).subscribe()
 
 		return this.tokenService.generate(account.id)
 	}
