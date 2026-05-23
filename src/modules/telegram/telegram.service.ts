@@ -11,6 +11,7 @@ import { createHash, createHmac, randomBytes } from 'crypto'
 
 import type { AllConfigs } from '@/config'
 import { RedisService } from '@/infrastructure/redis/redis.service'
+import { UsersClientGrpc } from '@/infrastructure/users/users.grpc'
 import { TelegramRepository } from '@/modules/telegram/telegram.repository'
 import { TokenService } from '@/modules/token/token.service'
 import { UserRepository } from '@/shared/repositories'
@@ -27,7 +28,8 @@ export class TelegramService {
 		private readonly configService: ConfigService<AllConfigs>,
 		private readonly userRepository: UserRepository,
 		private readonly telegramRepository: TelegramRepository,
-		private readonly tokenService: TokenService
+		private readonly tokenService: TokenService,
+		private readonly usersClient: UsersClientGrpc
 	) {
 		this.BOT_ID = this.configService.get('telegram.botId', { infer: true })
 		this.BOT_TOKEN = this.configService.get('telegram.botToken', {
@@ -68,6 +70,8 @@ export class TelegramService {
 			await this.telegramRepository.findByTelegramId(telegramId)
 
 		if (exists && exists.phone) return this.tokenService.generate(exists.id)
+
+		this.usersClient.create({ id: exists.id }).subscribe()
 
 		const sessionId = randomBytes(16).toString('hex')
 
