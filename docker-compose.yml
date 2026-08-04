@@ -1,5 +1,7 @@
 version: '3.9'
 
+name: microservice-cinema
+
 services:
   auth-service:
     container_name: auth-service
@@ -10,10 +12,6 @@ services:
     restart: always
     env_file:
       - .env.production.local
-    expose:
-      - '9101'
-    volumes:
-      - ../logs/auth:/var/log/services/auth
     networks:
       - microservice-cinema
 
