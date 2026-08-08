@@ -10,6 +10,7 @@ import { AuthModule } from '@/modules/auth/auth.module'
 import { OtpModule } from '@/modules/otp/otp.module'
 import { TelegramModule } from '@/modules/telegram/telegram.module'
 import { TokenModule } from '@/modules/token/token.module'
+import { ObservabilityModule } from '@/observability/observability.module'
 
 import {
 	databaseEnv,
@@ -42,6 +43,7 @@ import {
 		TokenModule,
 		PrismaModule,
 		MessagingModule,
+		ObservabilityModule,
 		RedisModule,
 		AuthModule,
 		AccountModule,
