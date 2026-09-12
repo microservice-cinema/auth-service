@@ -1,7 +1,7 @@
 import type {
 	CreateUserRequest,
 	UsersServiceClient
-} from '@microservice-cinema/contracts/gen/users'
+} from '@microservice-cinema/contracts/gen/ts/users'
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common'
 import type { ClientGrpc } from '@nestjs/microservices'
 

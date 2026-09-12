@@ -5,7 +5,7 @@ import type {
 	SendOtpResponse,
 	VerifyOtpRequest,
 	VerifyOtpResponse
-} from '@microservice-cinema/contracts/gen/auth'
+} from '@microservice-cinema/contracts/gen/ts/auth'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
 

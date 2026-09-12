@@ -9,7 +9,7 @@ import {
 	InitEmailChangeResponse,
 	InitPhoneChangeRequest,
 	InitPhoneChangeResponse
-} from '@microservice-cinema/contracts/gen/account'
+} from '@microservice-cinema/contracts/gen/ts/account'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
 

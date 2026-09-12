@@ -5,7 +5,7 @@ import type {
 	GetAccountRequest,
 	InitEmailChangeRequest,
 	InitPhoneChangeRequest
-} from '@microservice-cinema/contracts/gen/account'
+} from '@microservice-cinema/contracts/gen/ts/account'
 import { Injectable } from '@nestjs/common'
 import { RpcException } from '@nestjs/microservices'
 
