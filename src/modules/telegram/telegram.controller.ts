@@ -4,11 +4,11 @@ import type {
 	TelegramInitResponse,
 	TelegramVerifyRequest,
 	TelegramVerifyResponse
-} from '@microservice-cinema/contracts/gen/auth'
+} from '@microservice-cinema/contracts/gen/ts/auth'
 import {
 	TelegramCompleteRequest,
 	TelegramCompleteResponse
-} from '@microservice-cinema/contracts/gen/auth'
+} from '@microservice-cinema/contracts/gen/ts/auth'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
 

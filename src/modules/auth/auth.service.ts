@@ -3,7 +3,7 @@ import type {
 	RefreshRequest,
 	SendOtpRequest,
 	VerifyOtpRequest
-} from '@microservice-cinema/contracts/gen/auth'
+} from '@microservice-cinema/contracts/gen/ts/auth'
 import { Injectable } from '@nestjs/common'
 import { RpcException } from '@nestjs/microservices'
 import { Account } from '@prisma/generated/client'
@@ -58,6 +58,8 @@ export class AuthService {
 			type,
 			code
 		})
+
+		console.log('CODE: ', code)
 
 		this.logger.info(`OTP sent successfully to ${identifier}`)
 
