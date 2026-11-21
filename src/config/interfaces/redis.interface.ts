@@ -3,4 +3,5 @@ export interface RedisConfig {
 	port: number
 	password: string
 	user: string
+	db: number
 }
